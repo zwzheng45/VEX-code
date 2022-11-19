@@ -21,6 +21,7 @@ errorgps = Gps(Ports.PORT11, 0.00, 0.00, MM, 180)
 FIRESCANER = Vision(Ports.PORT12, 50)
 # vex-vision-config:end
 Rollerindexer = Motor(Ports.PORT8, GearSetting.RATIO_18_1, False)
+roller = Motor(Ports.PORT13, GearSetting.RATIO_18_1, False)
 
 
 # wait for rotation sensor to fully initialize
@@ -28,7 +29,7 @@ wait(30, MSEC)
 #endregion VEXcode Generated Robot Configuration
 
 # ------------------------------------------
-#
+#motor_9
 #   Project:bean
 #   Author:the big gill
 #   Created:00:00:00:001 the big bang
@@ -72,11 +73,16 @@ def user_control(): #user control
 
         #flywheel
         if (controller_1.buttonB.pressing()):
-            flywheel.spin(FORWARD,0,PERCENT)
+            flywheel.stop()
+            controller_1.screen.clear_row(3)
         if (controller_1.buttonA.pressing()):
-            flywheel.spin(FORWARD,100,PERCENT)
+            flywheel.spin(FORWARD,80,PERCENT)
+            controller_1.screen.clear_row(3)
+            controller_1.screen.print("FlyWheel: 80%        ")
         if (controller_1.buttonX.pressing()):
-            flywheel.spin(FORWARD,75,PERCENT)
+            flywheel.spin(FORWARD,60,PERCENT)
+            controller_1.screen.clear_row(3)
+            controller_1.screen.print("FlyWheel: 60%        ")
 
         #intake
         if (controller_1.buttonR1.pressing()):
@@ -84,15 +90,22 @@ def user_control(): #user control
         elif (controller_1.buttonR2.pressing()):
             intake.spin(FORWARD,-100,PERCENT) #in
         else:
-            intake.spin(FORWARD,0,PERCENT)
+            intake.stop()
         
         #indexer
         if (controller_1.buttonY.pressing()):
             Rollerindexer.spin(REVERSE,50,PERCENT)
         else:
-            Rollerindexer.spin(FORWARD,0,PERCENT)
+            Rollerindexer.stop()
         
-        #
+        #roller
+        if(controller_1.buttonL2.pressing()):
+            roller.spin(FORWARD,80,PERCENT)
+        elif(controller_1.buttonL1.pressing()):
+            roller.spin(REVERSE,80,PERCENT)
+        else:
+            roller.stop()
+
         #controller displayed
         #while True:
             
@@ -103,8 +116,6 @@ def user_control(): #user control
         #if FIRESCANER.take_snapshot(FIRESCANER_Blue)
         
         #the shank
-
-        #roller
         
         #error corection pid
 
