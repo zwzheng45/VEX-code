@@ -54,6 +54,11 @@ def autonomous(): #without human control
     brain.screen.clear_screen()
     brain.screen.print("autonomous code")
     # place automonous code here
+    FrontLeft.spin(FORWARD,-50,PERCENT)
+    FrontRight.spin(FORWARD,50,PERCENT)
+    BackLeft.spin(FORWARD,-50,PERCENT)
+    BackRight.spin(FORWARD,50,PERCENT)
+    intake.spin(FORWARD,-100,PERCENT)
  
 def user_control(): #user control
     brain.screen.clear_screen()
