@@ -3,5 +3,5 @@ v5python文件用于直接从IDE打开，纯py文件方便查看改动，两者�
 <br>
 The `.v5python` file is for opening in the VEXcode V5, the `.py` file is for easier checking the changes, they have the same content.
 ## Todo
-- [实现前15秒自动操作](https://github.com/zwzheng45/VEX-code/issues/2)
-- [通过PID算法校正四轮走向偏差以及飞轮发射力度](https://github.com/zwzheng45/VEX-code/issues/1)  
+- [实现前15秒自动操作 / Improve the autonomous for the first 15 seconds](https://github.com/zwzheng45/VEX-code/issues/2)
+- [通过PID算法校正四轮走向偏差以及飞轮发射力度 / PID](https://github.com/zwzheng45/VEX-code/issues/1)  
