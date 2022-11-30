@@ -81,13 +81,13 @@ def user_control(): #user control
             flywheel.stop()
             controller_1.screen.clear_row(3)
         if (controller_1.buttonA.pressing()):
-            flywheel.spin(FORWARD,80,PERCENT)
+            flywheel.spin(FORWARD,90,PERCENT)
             controller_1.screen.clear_row(3)
-            controller_1.screen.print("FlyWheel: 80%        ")
+            controller_1.screen.print("FlyWheel: 90%        ")
         if (controller_1.buttonX.pressing()):
-            flywheel.spin(FORWARD,60,PERCENT)
+            flywheel.spin(FORWARD,70,PERCENT)
             controller_1.screen.clear_row(3)
-            controller_1.screen.print("FlyWheel: 60%        ")
+            controller_1.screen.print("FlyWheel: 70%        ")
 
         #intake
         if (controller_1.buttonR1.pressing()):
