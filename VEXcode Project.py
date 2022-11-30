@@ -58,7 +58,7 @@ def autonomous(): #without human control
     FrontRight.spin(FORWARD,50,PERCENT)
     BackLeft.spin(FORWARD,-50,PERCENT)
     BackRight.spin(FORWARD,50,PERCENT)
-    intake.spin(FORWARD,-100,PERCENT)
+    roller.spin(REVERSE,-100,PERCENT) #red
  
 def user_control(): #user control
     brain.screen.clear_screen()
@@ -81,13 +81,13 @@ def user_control(): #user control
             flywheel.stop()
             controller_1.screen.clear_row(3)
         if (controller_1.buttonA.pressing()):
-            flywheel.spin(FORWARD,90,PERCENT)
+            flywheel.spin(FORWARD,80,PERCENT)
             controller_1.screen.clear_row(3)
-            controller_1.screen.print("FlyWheel: 90%        ")
+            controller_1.screen.print("FlyWheel: 80%        ")
         if (controller_1.buttonX.pressing()):
-            flywheel.spin(FORWARD,70,PERCENT)
+            flywheel.spin(FORWARD,65,PERCENT)
             controller_1.screen.clear_row(3)
-            controller_1.screen.print("FlyWheel: 70%        ")
+            controller_1.screen.print("FlyWheel: 65%        ")
 
         #intake
         if (controller_1.buttonR1.pressing()):
@@ -105,9 +105,9 @@ def user_control(): #user control
         
         #roller
         if(controller_1.buttonL2.pressing()):
-            roller.spin(FORWARD,80,PERCENT)
+            roller.spin(FORWARD,100,PERCENT)
         elif(controller_1.buttonL1.pressing()):
-            roller.spin(REVERSE,80,PERCENT)
+            roller.spin(REVERSE,100,PERCENT)
         else:
             roller.stop()
 
